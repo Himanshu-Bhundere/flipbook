@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Bookshelf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- DearFlip Styles -->
+  <link rel="stylesheet" href="dflip/css/dflip.min.css">
+  <link rel="stylesheet" href="dflip/css/themify-icons.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9f4ef;
+      color: #333;
+      padding-bottom: 100px;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      background: #4a3f35;
+      color: white;
+    }
+
+    .section {
+      margin: 30px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #cfa25c;
+      padding-bottom: 5px;
+      color: #4a3f35;
+    }
+
+    .shelf {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      background: url('images/shelf.png') repeat-x;
+      padding: 0px 0 68px 0;
+      position: relative;
+      margin-left: 19px;
+    }
+
+    .book {
+      width: 6rem;
+      margin: 2rem 5px 0 21px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .book img {
+      width: 85%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .book:hover {
+      transform: scale(1.05);
+    }
+
+    a {
+      padding-left: 7px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📚 Digital Bookshelf</h1>
+
+  <!-- Rich Mindset Section -->
+  <div class="section">
+    <div class="section-title">Rich Mindset</div>
+    <div class="shelf">
+      <div class="book" onclick="openBook('pdfs/1.pdf')">
+        <img src="images/1.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/2.pdf')">
+        <img src="images/2.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/3.pdf')">
+        <img src="images/3.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/4.pdf')">
+        <img src="images/4.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/5.pdf')">
+        <img src="images/5.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/6.pdf')">
+        <img src="images/6.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/7.pdf')">
+        <img src="images/7.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/8.pdf')">
+        <img src="images/8.png" >
+      </div>
+      </div>
+      <div class="shelf">
+      <div class="book" onclick="openBook('pdfs/9.pdf')">
+        <img src="images/9.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/10.pdf')">
+        <img src="images/10.png" >
+      </div>
+    </div>
+  </div>
+
+  <!-- Influence Section -->
+  <div class="section">
+    <div class="section-title">Influence</div>
+    <div class="shelf">
+      <div class="book" onclick="openBook('pdfs/11.pdf')">
+        <img src="images/11.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/12.pdf')">
+        <img src="images/12.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/13.pdf')">
+        <img src="images/13.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/14.pdf')">
+        <img src="images/14.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/15.pdf')">
+        <img src="images/15.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/16.pdf')">
+        <img src="images/16.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/17.pdf')">
+        <img src="images/17.png" >
+      </div>
+      <div class="book" onclick="openBook('pdfs/18.pdf')">
+        <img src="images/18.png" >
+      </div></div>
+      <div class="shelf">
+      <div class="book" onclick="openBook('pdfs/19.pdf')">
+        <img src="images/19.png" >
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openBook(pdfFile) {
+      sessionStorage.setItem('selectedPDF', pdfFile);
+      window.location.href = 'flipbook.html';
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flipbook Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- DearFlip CSS -->
+  <link rel="stylesheet" href="dflip/css/dflip.min.css">
+  <link rel="stylesheet" href="dflip/css/themify-icons.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+    }
+
+    .back-button button {
+      padding: 10px 15px;
+      background-color: #4a3f35;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .flipbook-wrapper {
+      max-width: 100%;
+      margin: 0px auto 20px auto;
+    }
+
+    @media (max-width: 768px) {
+      .flipbook-wrapper {
+        margin-top: 30px;
+      }
+
+      .back-button button {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-button">
+    <a href="index.html"><button>⬅ Back to Bookshelf</button></a>
+  </div>
+
+  <div class="flipbook-wrapper">
+    <div class="_df_book" id="df_manual_book" height="600"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="dflip/js/libs/jquery.min.js"></script>
+  <script src="dflip/js/dflip.min.js"></script>
+  <script>
+    let currentPage = 1;
+    const pdfFile = sessionStorage.getItem('selectedPDF');
+
+
+    if (pdfFile) {
+      const flipbook = document.getElementById("df_manual_book");
+      flipbook.setAttribute("source", pdfFile);
+      flipbook.innerHTML = '';
+    } else {
+      document.body.innerHTML += "<p style='text-align:center;color:red;'>No book selected. <a href='index.html'>Go back</a></p>";
+    }
+  </script>
+</body>
+</html>
